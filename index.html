@@ -22,13 +22,12 @@
   </header>
 
   <main class="container mx-auto p-6">
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Section des produits -->
+    <section id="products" class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <!-- Produit 1 -->
       <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
         <h2 class="text-xl font-semibold mt-4">🫒 Olivette Dry90U ⚡️</h2>
-        <a href="olivette.html">
-          <video class="w-full h-48 object-cover rounded-md cursor-pointer" src="olive.mp4" alt="Olivette" controls></video>
-        </a>
+        <video class="w-full h-48 object-cover rounded-md cursor-pointer" src="olive.mp4" alt="Olivette" controls onclick="showDescription()"></video>
       </div>
       <!-- Produit 2 -->
       <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
@@ -39,6 +38,22 @@
         <button class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md">Ajouter au panier</button>
       </div>
     </section>
+
+    <!-- Section de description (cachée par défaut) -->
+    <section id="description" class="hidden bg-gray-800 rounded-lg p-4 shadow-lg">
+      <h2 class="text-xl font-semibold mt-4">🫒 Olivette Dry90U ⚡️</h2>
+      <video class="w-full h-48 object-cover rounded-md" src="olive.mp4" alt="Olivette" controls></video>
+      <p class="text-gray-400 mt-2">
+        🫒 5G = 50€<br>
+        🫒 10G = 90€<br>
+        🫒 20G = 170€<br>
+        🫒 25G = 190€<br>
+        <br>
+        👎 Pas beaucoup de stock 🛍️, dépêchez-vous les frérots 😉
+      </p>
+      <a href="https://dym168.org/dry_coffee76" class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md text-center inline-block">Contact</a>
+      <button onclick="showProducts()" class="mt-4 w-full bg-gray-600 hover:bg-gray-700 text-white py-2 rounded-md">Retour</button>
+    </section>
   </main>
 
   <footer class="bg-gray-800 p-4 text-center">
@@ -46,8 +61,20 @@
   </footer>
 
   <script>
+    // Fonction pour afficher la section de description et masquer les produits
+    function showDescription() {
+      document.getElementById('products').classList.add('hidden');
+      document.getElementById('description').classList.remove('hidden');
+    }
+
+    // Fonction pour afficher les produits et masquer la description
+    function showProducts() {
+      document.getElementById('description').classList.add('hidden');
+      document.getElementById('products').classList.remove('hidden');
+    }
+
     // Fonctionnalité de base pour les boutons "Ajouter au panier"
-    document.querySelectorAll('button').forEach(button => {
+    document.querySelectorAll('button:not([onclick])').forEach(button => {
       button.addEventListener('click', () => {
         alert('Produit ajouté au panier !');
       });
