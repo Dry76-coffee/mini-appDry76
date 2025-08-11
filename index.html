@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dry.Coffee76</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+  <header class="bg-gray-800 p-4">
+    <div class="flex items-center justify-center">
+      <img src="chaton.png" alt="Logo Chaton" class="h-12 w-12 mr-2">
+      <h1 class="text-3xl font-bold">Dry.Coffee76</h1>
+    </div>
+    <nav class="mt-4">
+      <ul class="flex justify-center space-x-6">
+        <li><a href="#" class="hover:text-green-400">Accueil</a></li>
+        <li><a href="#" class="hover:text-green-400">Produits</a></li>
+        <li><a href="#" class="hover:text-green-400">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container mx-auto p-6">
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Produit 1 -->
+      <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
+        <img src="https://via.placeholder.com/300x200" alt="Huile" class="w-full h-48 object-cover rounded-md">
+        <h2 class="text-xl font-semibold mt-4">Huile Premium 10%</h2>
+        <p class="text-gray-400 mt-2">Huile premium, concentration 10%, flacon de 10ml.</p>
+        <p class="text-green-400 font-bold mt-2">29,99 €</p>
+        <button class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md">Ajouter au panier</button>
+      </div>
+      <!-- Produit 2 -->
+      <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
+        <img src="https://via.placeholder.com/300x200" alt="Fleurs" class="w-full h-48 object-cover rounded-md">
+        <h2 class="text-xl font-semibold mt-4">Fleurs Amnesia</h2>
+        <p class="text-gray-400 mt-2">Fleurs bio, saveur Amnesia, sachet de 5g.</p>
+        <p class="text-green-400 font-bold mt-2">19,99 €</p>
+        <button class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md">Ajouter au panier</button>
+      </div>
+      <!-- Produit 3 -->
+      <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
+        <img src="https://via.placeholder.com/300x200" alt="Gummies" class="w-full h-48 object-cover rounded-md">
+        <h2 class="text-xl font-semibold mt-4">Gummies Fruités</h2>
+        <p class="text-gray-400 mt-2">Bonbons gélifiés, 25mg par pièce, paquet de 10.</p>
+        <p class="text-green-400 font-bold mt-2">14,99 €</p>
+        <button class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md">Ajouter au panier</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-800 p-4 text-center">
+    <p>&copy; 2025 Dry.Coffee76. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    // Fonctionnalité de base pour les boutons (exemple)
+    document.querySelectorAll('button').forEach(button => {
+      button.addEventListener('click', () => {
+        alert('Produit ajouté au panier !');
+      });
+    });
+  </script>
+</body>
+</html>
