@@ -22,14 +22,13 @@
   </header>
 
   <main class="container mx-auto p-6">
-    <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <!-- Produit 1 -->
       <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
-        <img src="https://via.placeholder.com/300x200" alt="Huile" class="w-full h-48 object-cover rounded-md">
-        <h2 class="text-xl font-semibold mt-4">Huile Premium 10%</h2>
-        <p class="text-gray-400 mt-2">Huile premium, concentration 10%, flacon de 10ml.</p>
-        <p class="text-green-400 font-bold mt-2">29,99 €</p>
-        <button class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md">Ajouter au panier</button>
+        <h2 class="text-xl font-semibold mt-4">🫒 Olivette Dry90U ⚡️</h2>
+        <a href="olivette.html">
+          <video class="w-full h-48 object-cover rounded-md cursor-pointer" src="olive.mp4" alt="Olivette" controls></video>
+        </a>
       </div>
       <!-- Produit 2 -->
       <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
@@ -37,14 +36,6 @@
         <h2 class="text-xl font-semibold mt-4">Fleurs Amnesia</h2>
         <p class="text-gray-400 mt-2">Fleurs bio, saveur Amnesia, sachet de 5g.</p>
         <p class="text-green-400 font-bold mt-2">19,99 €</p>
-        <button class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md">Ajouter au panier</button>
-      </div>
-      <!-- Produit 3 -->
-      <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
-        <img src="https://via.placeholder.com/300x200" alt="Gummies" class="w-full h-48 object-cover rounded-md">
-        <h2 class="text-xl font-semibold mt-4">Gummies Fruités</h2>
-        <p class="text-gray-400 mt-2">Bonbons gélifiés, 25mg par pièce, paquet de 10.</p>
-        <p class="text-green-400 font-bold mt-2">14,99 €</p>
         <button class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md">Ajouter au panier</button>
       </div>
     </section>
@@ -55,7 +46,7 @@
   </footer>
 
   <script>
-    // Fonctionnalité de base pour les boutons (exemple)
+    // Fonctionnalité de base pour les boutons "Ajouter au panier"
     document.querySelectorAll('button').forEach(button => {
       button.addEventListener('click', () => {
         alert('Produit ajouté au panier !');
