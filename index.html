@@ -51,9 +51,10 @@
     /* Menu styles */
     #nav-menu {
       transition: transform 0.3s ease;
-    }
-    #nav-menu.hidden {
       transform: translateX(100%);
+    }
+    #nav-menu.open {
+      transform: translateX(0);
     }
   </style>
 </head>
@@ -78,7 +79,7 @@
       </div>
     </div>
     <!-- Navigation Menu (hidden by default) -->
-    <nav id="nav-menu" class="hidden fixed top-0 right-0 h-full w-64 bg-gray-800 p-6 z-50 transform translate-x-full">
+    <nav id="nav-menu" class="fixed top-0 right-0 h-full w-64 bg-gray-800 p-6 z-50 transform translate-x-full">
       <ul class="flex flex-col space-y-4 mt-16">
         <li><a href="#" onclick="showAccueil(); toggleMenu()" class="text-lg hover:text-green-400">🏠Accueil</a></li>
         <li><a href="#" onclick="showProducts(); toggleMenu()" class="text-lg hover:text-green-400">Menu📝</a></li>
@@ -90,14 +91,14 @@
 
   <main class="container mx-auto p-6">
     <!-- Section d'accueil (visible par défaut) -->
-    <section id="accueil" class="relative mb-6">
-      <div class="flex justify-center mt-20"> <!-- Added mt-20 to move logo down -->
+    <section id="accueil" class="mb-6">
+      <div class="flex flex-col items-center space-y-8"> <!-- Use flex-col to stack logo and text vertically -->
+        <div class="p-4 text-center">
+          <p class="text-xl md:text-2xl font-bold text-green-400 drop-shadow-lg">
+            Découvrez notre Mini-app📲 avec de bonnes interactions en haut a droite 👆
+          </p>
+        </div>
         <img src="chaton.jpg" alt="Logo Dry.Coffee76" class="h-48 w-48 md:h-64 md:w-64 object-cover rounded-full">
-      </div>
-      <div class="absolute top-0 right-0 p-4 text-right">
-        <p class="text-xl md:text-2xl font-bold text-green-400 drop-shadow-lg">
-          Découvrez notre Mini-app📲 avec de bonnes interactions en haut a droite 👆
-        </p>
       </div>
     </section>
 
