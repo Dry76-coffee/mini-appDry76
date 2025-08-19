@@ -122,4 +122,28 @@
   <script>
     // Fonction pour afficher la section de description correspondant au produit et masquer les autres sections
     function showDescription(product) {
-      document
+      document.getElementById('products').classList.add('hidden');
+      document.getElementById('information').classList.add('hidden');
+      document.getElementById(`description-${product}`).classList.remove('hidden');
+    }
+
+    // Fonction pour afficher les produits et masquer toutes les autres sections
+    function showProducts() {
+      document.getElementById('products').classList.remove('hidden');
+      document.getElementById('description-olivette').classList.add('hidden');
+      document.getElementById('description-olivette_frozen').classList.add('hidden');
+      document.getElementById('description-colombienne').classList.add('hidden');
+      document.getElementById('information').classList.add('hidden');
+    }
+
+    // Fonction pour afficher la section d'information et masquer les autres sections
+    function showInformation() {
+      document.getElementById('products').classList.add('hidden');
+      document.getElementById('description-olivette').classList.add('hidden');
+      document.getElementById('description-olivette_frozen').classList.add('hidden');
+      document.getElementById('description-colombienne').classList.add('hidden');
+      document.getElementById('information').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
