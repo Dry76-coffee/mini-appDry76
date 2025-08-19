@@ -30,10 +30,10 @@
         <h2 class="text-xl font-semibold mt-4">🫒 Olivette Dry90U ⚡️</h2>
         <img src="olive.jpg" alt="Olivette" class="w-full h-48 object-cover rounded-md cursor-pointer" onclick="showDescription('olivette')">
       </div>
-      <!-- Produit 2: Moon Velvet -->
+      <!-- Produit 2: Olivette Frozen -->
       <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
-        <h2 class="text-xl font-semibold mt-4">🌳 Moon Velvet 🌳</h2>
-        <img src="moon.JPG" alt="Moon Velvet" class="w-full h-48 object-cover rounded-md cursor-pointer" onclick="showDescription('moon')">
+        <h2 class="text-xl font-semibold mt-4">🫒Olivette Frozen🧊90U⚡️</h2>
+        <img src="olivette_frozen.jpg" alt="Olivette Frozen" class="w-full h-48 object-cover rounded-md cursor-pointer" onclick="showDescription('olivette_frozen')">
       </div>
       <!-- Produit 3: Colombienne -->
       <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
@@ -58,90 +58,12 @@
       <button onclick="showProducts()" class="mt-4 w-full bg-gray-600 hover:bg-gray-700 text-white py-2 rounded-md">Retour</button>
     </section>
 
-    <!-- Section de description pour Moon Velvet (cachée par défaut) -->
-    <section id="description-moon" class="hidden bg-gray-800 rounded-lg p-4 shadow-lg">
-      <h2 class="text-xl font-semibold mt-4">🌳 Moon Velvet 🌳</h2>
-      <video class="w-full h-48 object-cover rounded-md" src="moon.mp4" poster="moon.JPG" alt="Moon Velvet" controls></video>
+    <!-- Section de description pour Olivette Frozen (cachée par défaut) -->
+    <section id="description-olivette_frozen" class="hidden bg-gray-800 rounded-lg p-4 shadow-lg">
+      <h2 class="text-xl font-semibold mt-4">🫒Olivette Frozen🧊90U⚡️</h2>
+      <video class="w-full h-48 object-cover rounded-md" src="olivette_frozen.mp4" poster="olivette_frozen.jpg" alt="Olivette Frozen" controls></video>
       <p class="text-gray-400 mt-2">
-        🏆 Top Shelph 🏆<br>
-        🌳5G = 50€<br>
-        🌳10G = 80€<br>
-        🌳20G = 160€<br>
-        🌳25G = 190€<br>
-        <br>
-        🍨 Bon goût crémeux et une bonne odeur 👃<br>
-        <br>
-        👎 Pas beaucoup de stock 🛍️, dépêchez-vous les frérots 😉
-      </p>
-      <a href="https://dym168.org/dry_coffee76" class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md text-center inline-block">Contact</a>
-      <button onclick="showProducts()" class="mt-4 w-full bg-gray-600 hover:bg-gray-700 text-white py-2 rounded-md">Retour</button>
-    </section>
-
-    <!-- Section de description pour Colombienne (cachée par défaut) -->
-    <section id="description-colombienne" class="hidden bg-gray-800 rounded-lg p-4 shadow-lg">
-      <h2 class="text-xl font-semibold mt-4">❄️ Colombienne 0,95% 🇨🇴</h2>
-      <video class="w-full h-48 object-cover rounded-md" src="baida95.mp4" poster="baida95.jpg" alt="Colombienne" controls></video>
-      <p class="text-gray-400 mt-2">
-        Qualité: ⭐️⭐️⭐️⭐️⭐️<br>
-        <br>
-        Prix 🏷️<br>
-        ❄️ 1G = 70€<br>
-        ❄️ 3G = 160€<br>
-        ❄️ 5G = 240€<br>
-        ❄️ 10G = 410€<br>
-        <br>
-        Description : elle a un bon parfum, très propre et elle pousse fort
-      </p>
-      <a href="https://dym168.org/dry_coffee76" class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md text-center inline-block">Contact</a>
-      <button onclick="showProducts()" class="mt-4 w-full bg-gray-600 hover:bg-gray-700 text-white py-2 rounded-md">Retour</button>
-    </section>
-
-    <!-- Section d'information (cachée par défaut) -->
-    <section id="information" class="hidden bg-gray-800 rounded-lg p-4 shadow-lg text-center">
-      <h2 class="text-xl font-semibold mt-4">À propos de Dry.Coffee76</h2>
-      <p class="text-gray-400 mt-2">
-        ✨ Bienvenue dans votre nouvelle boutique de petits produits de qualité à Rouen ! ✨<br><br>
-        Nous vous proposons une sélection de produits soigneusement choisis, alliant qualité, praticité et petits prix. Que ce soit pour vous faire plaisir ou pour offrir, chaque article est sélectionné avec attention.<br><br>
-        📍 Retrouvez-nous sur place à Rouen pour découvrir tous nos produits en direct.<br>
-        🚚 Livraison possible aux alentours de Rouen pour plus de confort – il vous suffit de nous contacter !<br><br>
-        ✅ Produits de qualité<br>
-        ✅ Service chaleureux<br>
-        ✅ Disponibilité rapide<br><br>
-        Suivez-nous pour ne rien rater des nouveautés et promotions !
-      </p>
-      <button onclick="showProducts()" class="mt-4 w-full bg-gray-600 hover:bg-gray-700 text-white py-2 rounded-md">Retour</button>
-    </section>
-  </main>
-
-  <footer class="bg-gray-800 p-4 text-center">
-    <p>&copy; 2025 Dry.Coffee76. Tous droits réservés.</p>
-  </footer>
-
-  <script>
-    // Fonction pour afficher la section de description correspondant au produit et masquer les autres sections
-    function showDescription(product) {
-      document.getElementById('products').classList.add('hidden');
-      document.getElementById('information').classList.add('hidden');
-      document.getElementById(`description-${product}`).classList.remove('hidden');
-    }
-
-    // Fonction pour afficher les produits et masquer toutes les autres sections
-    function showProducts() {
-      document.getElementById('products').classList.remove('hidden');
-      document.getElementById('description-olivette').classList.add('hidden');
-      document.getElementById('description-moon').classList.add('hidden');
-      document.getElementById('description-colombienne').classList.add('hidden');
-      document.getElementById('information').classList.add('hidden');
-    }
-
-    // Fonction pour afficher la section d'information et masquer les autres sections
-    function showInformation() {
-      document.getElementById('products').classList.add('hidden');
-      document.getElementById('description-olivette').classList.add('hidden');
-      document.getElementById('description-moon').classList.add('hidden');
-      document.getElementById('description-colombienne').classList.add('hidden');
-      document.getElementById('information').classList.remove('hidden');
-    }
-  </script>
-</body>
-</html>
+        📫Farm : Treasure valey<br>
+        -Cherry Lemon🍒🍋<br>
+        🫒5G=70€<br>
+        🫒10G
