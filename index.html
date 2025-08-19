@@ -155,13 +155,11 @@
   </footer>
 
   <script>
-    // Hide loading screen when the page is fully loaded
-    window.onload = function() {
+    // Hide loading screen after exactly 3 seconds
+    setTimeout(() => {
       const loadingScreen = document.getElementById('loading-screen');
-      setTimeout(() => {
-        loadingScreen.classList.add('hidden');
-      }, 500); // Optional delay for smoother transition (500ms)
-    };
+      loadingScreen.classList.add('hidden');
+    }, 3000); // 3000ms = 3 seconds
 
     // Fonction pour afficher la section de description correspondant au produit et masquer les autres sections
     function showDescription(product) {
