@@ -33,6 +33,28 @@
       opacity: 0;
       visibility: hidden;
     }
+    /* Hamburger menu icon */
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 24px;
+      height: 20px;
+      cursor: pointer;
+    }
+    .hamburger span {
+      width: 100%;
+      height: 3px;
+      background-color: white;
+      transition: all 0.3s ease;
+    }
+    /* Menu styles */
+    #nav-menu {
+      transition: transform 0.3s ease;
+    }
+    #nav-menu.hidden {
+      transform: translateX(100%);
+    }
   </style>
 </head>
 <body class="bg-gray-900 text-white min-h-screen">
@@ -43,27 +65,48 @@
   </div>
 
   <header class="bg-gray-800 p-4">
-    <div class="flex items-center justify-center">
-      <img src="chaton.jpg" alt="Logo Chaton" class="h-12 w-12 mr-2">
-      <h1 class="text-3xl font-bold">Dry.Coffee76</h1>
+    <div class="flex items-center justify-between">
+      <div class="flex items-center">
+        <img src="chaton.jpg" alt="Logo Chaton" class="h-12 w-12 mr-2">
+        <h1 class="text-3xl font-bold">Dry.Coffee76</h1>
+      </div>
+      <!-- Hamburger Button -->
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-    <nav class="mt-4">
-      <ul class="flex justify-center space-x-6">
-        <li><a href="#" onclick="showProducts()" class="hover:text-green-400">Accueil</a></li>
-        <li><a href="#" onclick="showProducts()" class="hover:text-green-400">Produits</a></li>
-        <li><a href="https://dym168.org/dry_coffee76" class="hover:text-green-400">Contact</a></li>
-        <li><a href="#" onclick="showInformation()" class="hover:text-green-400">Information</a></li>
+    <!-- Navigation Menu (hidden by default) -->
+    <nav id="nav-menu" class="hidden fixed top-0 right-0 h-full w-64 bg-gray-800 p-6 z-50 transform translate-x-full">
+      <ul class="flex flex-col space-y-4 mt-16">
+        <li><a href="#" onclick="showAccueil(); toggleMenu()" class="text-lg hover:text-green-400">Accueil</a></li>
+        <li><a href="#" onclick="showProducts(); toggleMenu()" class="text-lg hover:text-green-400">Produits</a></li>
+        <li><a href="https://dym168.org/dry_coffee76" class="text-lg hover:text-green-400">Contact</a></li>
+        <li><a href="#" onclick="showInformation(); toggleMenu()" class="text-lg hover:text-green-400">Information</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="container mx-auto p-6">
-    <!-- Section des produits -->
-    <section id="products" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Section d'accueil (visible par défaut) -->
+    <section id="accueil" class="relative mb-6">
+      <div class="flex justify-center">
+        <img src="chaton.jpg" alt="Logo Dry.Coffee76" class="h-48 w-48 md:h-64 md:w-64 object-cover rounded-full">
+      </div>
+      <div class="absolute top-0 right-0 p-4 text-right">
+        <p class="text-xl md:text-2xl font-bold text-green-400 drop-shadow-lg">
+          Découvrez notre Mini-app📲 avec de bonnes interactions en haut a droite 👆
+        </p>
+      </div>
+    </section>
+
+    <!-- Section des produits (cachée par défaut) -->
+    <section id="products" class="hidden grid grid-cols-1 md:grid-cols-3 gap-6">
       <!-- Produit 1: Moon Velvet -->
       <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
         <h2 class="text-xl font-semibold mt-4">🌳 Moon Velvet 🌳</h2>
-        <img src="moon.JPG" alt="Moon Velvet" class="w-full h-48 object-cover rounded-md cursor-pointer" onclick="showDescription('olivette')">
+        <img src="moon.jpg" alt="Moon Velvet" class="w-full h-48 object-cover rounded-md cursor-pointer" onclick="showDescription('olivette')">
       </div>
       <!-- Produit 2: Olivette Frozen -->
       <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
@@ -80,13 +123,13 @@
     <!-- Section de description pour Moon Velvet (cachée par défaut) -->
     <section id="description-olivette" class="hidden bg-gray-800 rounded-lg p-4 shadow-lg">
       <h2 class="text-xl font-semibold mt-4">🌳 Moon Velvet 🌳</h2>
-      <video class="w-full h-48 object-cover rounded-md" src="Moonvelvet.MOV" poster="moon.JPG" alt="Moon Velvet" controls></video>
+      <video class="w-full h-48 object-cover rounded-md" src="moonvelvet.mov" poster="moon.jpg" alt="Moon Velvet" controls></video>
       <p class="text-gray-400 mt-2">
         🏆Top Shelf🏆<br>
         <br>
-        🌳5G=50€<br>
-        🌳10G=80€<br>
-        🌳25G=190€<br>
+        5G=50€<br>
+        10G=80€<br>
+        25G=190€<br>
         <br>
         👎Pas beaucoup de stock🛍️, <br>
         dépêcher vous les frérots 😉
@@ -163,15 +206,25 @@
       loadingScreen.classList.add('hidden');
     }, 3000); // 3000ms = 3 seconds
 
-    // Fonction pour afficher la section de description correspondant au produit et masquer les autres sections
-    function showDescription(product) {
-      document.getElementById('products').classList.add('hidden');
-      document.getElementById('information').classList.add('hidden');
-      document.getElementById(`description-${product}`).classList.remove('hidden');
+    // Toggle the navigation menu
+    function toggleMenu() {
+      const menu = document.getElementById('nav-menu');
+      menu.classList.toggle('hidden');
     }
 
-    // Fonction pour afficher les produits et masquer toutes les autres sections
+    // Fonction pour afficher la section d'accueil et masquer les autres sections
+    function showAccueil() {
+      document.getElementById('accueil').classList.remove('hidden');
+      document.getElementById('products').classList.add('hidden');
+      document.getElementById('description-olivette').classList.add('hidden');
+      document.getElementById('description-olivette_frozen').classList.add('hidden');
+      document.getElementById('description-colombienne').classList.add('hidden');
+      document.getElementById('information').classList.add('hidden');
+    }
+
+    // Fonction pour afficher la section des produits et masquer les autres sections
     function showProducts() {
+      document.getElementById('accueil').classList.add('hidden');
       document.getElementById('products').classList.remove('hidden');
       document.getElementById('description-olivette').classList.add('hidden');
       document.getElementById('description-olivette_frozen').classList.add('hidden');
@@ -179,14 +232,28 @@
       document.getElementById('information').classList.add('hidden');
     }
 
+    // Fonction pour afficher la section de description correspondant au produit et masquer les autres sections
+    function showDescription(product) {
+      document.getElementById('accueil').classList.add('hidden');
+      document.getElementById('products').classList.add('hidden');
+      document.getElementById('information').classList.add('hidden');
+      document.getElementById(`description-${product}`).classList.remove('hidden');
+    }
+
     // Fonction pour afficher la section d'information et masquer les autres sections
     function showInformation() {
+      document.getElementById('accueil').classList.add('hidden');
       document.getElementById('products').classList.add('hidden');
       document.getElementById('description-olivette').classList.add('hidden');
       document.getElementById('description-olivette_frozen').classList.add('hidden');
       document.getElementById('description-colombienne').classList.add('hidden');
       document.getElementById('information').classList.remove('hidden');
     }
+
+    // Afficher la section d'accueil par défaut après le chargement
+    window.onload = function() {
+      showAccueil();
+    };
   </script>
 </body>
 </html>
