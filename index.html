@@ -61,9 +61,65 @@
     <!-- Section de description pour Olivette Frozen (cachée par défaut) -->
     <section id="description-olivette_frozen" class="hidden bg-gray-800 rounded-lg p-4 shadow-lg">
       <h2 class="text-xl font-semibold mt-4">🫒Olivette Frozen🧊90U⚡️</h2>
-      <video class="w-full h-48 object-cover rounded-md" src="olivette_frozen.mp4" poster="olivette_frozen.jpg" alt="Olivette Frozen" controls></video>
+      <video class="w-full h-48 object-cover rounded-md" src="olivette_frozen.mp4" poster="olivette_frozen.JPG" alt="Olivette Frozen" controls></video>
       <p class="text-gray-400 mt-2">
         📫Farm : Treasure valey<br>
         -Cherry Lemon🍒🍋<br>
         🫒5G=70€<br>
-        🫒10G
+        🫒10G=120€<br>
+        🫒20G=220€<br>
+        🫒50G=400€<br>
+        🫒100G=700€<br>
+        <br>
+        🍒🍋 Un goût unique à découvrir !<br>
+        L’alliance parfaite entre la douceur sucrée de la cerise et la fraîcheur acidulée du citron.<br>
+        Un équilibre savoureux qui réveille les papilles et laisse une note légère et agréable en bouche.
+      </p>
+      <a href="https://dym168.org/dry_coffee76" class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md text-center inline-block">Contact</a>
+      <button onclick="showProducts()" class="mt-4 w-full bg-gray-600 hover:bg-gray-700 text-white py-2 rounded-md">Retour</button>
+    </section>
+
+    <!-- Section de description pour Colombienne (cachée par défaut) -->
+    <section id="description-colombienne" class="hidden bg-gray-800 rounded-lg p-4 shadow-lg">
+      <h2 class="text-xl font-semibold mt-4">❄️ Colombienne 0,95% 🇨🇴</h2>
+      <video class="w-full h-48 object-cover rounded-md" src="baida95.mp4" poster="baida95.jpg" alt="Colombienne" controls></video>
+      <p class="text-gray-400 mt-2">
+        Qualité: ⭐️⭐️⭐️⭐️⭐️<br>
+        <br>
+        Prix 🏷️<br>
+        ❄️ 1G = 70€<br>
+        ❄️ 3G = 160€<br>
+        ❄️ 5G = 240€<br>
+        ❄️ 10G = 410€<br>
+        <br>
+        Description : elle a un bon parfum, très propre et elle pousse fort
+      </p>
+      <a href="https://dym168.org/dry_coffee76" class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md text-center inline-block">Contact</a>
+      <button onclick="showProducts()" class="mt-4 w-full bg-gray-600 hover:bg-gray-700 text-white py-2 rounded-md">Retour</button>
+    </section>
+
+    <!-- Section d'information (cachée par défaut) -->
+    <section id="information" class="hidden bg-gray-800 rounded-lg p-4 shadow-lg text-center">
+      <h2 class="text-xl font-semibold mt-4">À propos de Dry.Coffee76</h2>
+      <p class="text-gray-400 mt-2">
+        ✨ Bienvenue dans votre nouvelle boutique de petits produits de qualité à Rouen ! ✨<br><br>
+        Nous vous proposons une sélection de produits soigneusement choisis, alliant qualité, praticité et petits prix. Que ce soit pour vous faire plaisir ou pour offrir, chaque article est sélectionné avec attention.<br><br>
+        📍 Retrouvez-nous sur place à Rouen pour découvrir tous nos produits en direct.<br>
+        🚚 Livraison possible aux alentours de Rouen pour plus de confort – il vous suffit de nous contacter !<br><br>
+        ✅ Produits de qualité<br>
+        ✅ Service chaleureux<br>
+        ✅ Disponibilité rapide<br><br>
+        Suivez-nous pour ne rien rater des nouveautés et promotions !
+      </p>
+      <button onclick="showProducts()" class="mt-4 w-full bg-gray-600 hover:bg-gray-700 text-white py-2 rounded-md">Retour</button>
+    </section>
+  </main>
+
+  <footer class="bg-gray-800 p-4 text-center">
+    <p>&copy; 2025 Dry.Coffee76. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    // Fonction pour afficher la section de description correspondant au produit et masquer les autres sections
+    function showDescription(product) {
+      document
