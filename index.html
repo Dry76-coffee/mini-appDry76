@@ -80,10 +80,10 @@
     <!-- Navigation Menu (hidden by default) -->
     <nav id="nav-menu" class="hidden fixed top-0 right-0 h-full w-64 bg-gray-800 p-6 z-50 transform translate-x-full">
       <ul class="flex flex-col space-y-4 mt-16">
-        <li><a href="#" onclick="showAccueil(); toggleMenu()" class="text-lg hover:text-green-400">Accueil</a></li>
-        <li><a href="#" onclick="showProducts(); toggleMenu()" class="text-lg hover:text-green-400">Produits</a></li>
-        <li><a href="https://dym168.org/dry_coffee76" class="text-lg hover:text-green-400">Contact</a></li>
-        <li><a href="#" onclick="showInformation(); toggleMenu()" class="text-lg hover:text-green-400">Information</a></li>
+        <li><a href="#" onclick="showAccueil(); toggleMenu()" class="text-lg hover:text-green-400">🏠Accueil</a></li>
+        <li><a href="#" onclick="showProducts(); toggleMenu()" class="text-lg hover:text-green-400">Menu📝</a></li>
+        <li><a href="https://dym168.org/dry_coffee76" class="text-lg hover:text-green-400">📱Contact</a></li>
+        <li><a href="#" onclick="showInformation(); toggleMenu()" class="text-lg hover:text-green-400">Informationℹ️</a></li>
       </ul>
     </nav>
   </header>
@@ -91,7 +91,7 @@
   <main class="container mx-auto p-6">
     <!-- Section d'accueil (visible par défaut) -->
     <section id="accueil" class="relative mb-6">
-      <div class="flex justify-center">
+      <div class="flex justify-center mt-20"> <!-- Added mt-20 to move logo down -->
         <img src="chaton.jpg" alt="Logo Dry.Coffee76" class="h-48 w-48 md:h-64 md:w-64 object-cover rounded-full">
       </div>
       <div class="absolute top-0 right-0 p-4 text-right">
@@ -106,7 +106,7 @@
       <!-- Produit 1: Moon Velvet -->
       <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
         <h2 class="text-xl font-semibold mt-4">🌳 Moon Velvet 🌳</h2>
-        <img src="moon.jpg" alt="Moon Velvet" class="w-full h-48 object-cover rounded-md cursor-pointer" onclick="showDescription('olivette')">
+        <img src="moon.JPG" alt="Moon Velvet" class="w-full h-48 object-cover rounded-md cursor-pointer" onclick="showDescription('olivette')">
       </div>
       <!-- Produit 2: Olivette Frozen -->
       <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
@@ -123,13 +123,13 @@
     <!-- Section de description pour Moon Velvet (cachée par défaut) -->
     <section id="description-olivette" class="hidden bg-gray-800 rounded-lg p-4 shadow-lg">
       <h2 class="text-xl font-semibold mt-4">🌳 Moon Velvet 🌳</h2>
-      <video class="w-full h-48 object-cover rounded-md" src="moonvelvet.mov" poster="moon.jpg" alt="Moon Velvet" controls></video>
+      <video class="w-full h-48 object-cover rounded-md" src="Moonvelvet.MOV" poster="moon.JPG" alt="Moon Velvet" controls></video>
       <p class="text-gray-400 mt-2">
         🏆Top Shelf🏆<br>
         <br>
-        5G=50€<br>
-        10G=80€<br>
-        25G=190€<br>
+        🌳5G=50€<br>
+        🌳10G=80€<br>
+        🌳25G=190€<br>
         <br>
         👎Pas beaucoup de stock🛍️, <br>
         dépêcher vous les frérots 😉
