@@ -101,29 +101,16 @@
     <nav id="nav-menu">
       <span class="close-btn" onclick="toggleMenu()">✖</span>
       <ul class="flex flex-col space-y-4 mt-16">
-        <li><a href="#" onclick="showAccueil(); toggleMenu()" class="text-lg hover:text-green-400">🏠Accueil</a></li>
         <li><a href="#" onclick="showProducts(); toggleMenu()" class="text-lg hover:text-green-400">Menu📝</a></li>
-        <li><a href="https://signal.me/#eu/gHsUO0hCWSrM3TLgrhorIhP_M40Qf0yJz6eht09COk5trLXpo8JOHpUqmGNYIGKX" onclick="toggleMenu()" class="text-lg hover:text-green-400">📱Contact</a></li>
         <li><a href="#" onclick="showInformation(); toggleMenu()" class="text-lg hover:text-green-400">Informationℹ️</a></li>
+        <li><a href="links.html" onclick="toggleMenu()" class="text-lg hover:text-green-400">Liens🔗</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="container mx-auto p-6">
-    <!-- Section d'accueil (visible par défaut) -->
-    <section id="accueil" class="mb-6">
-      <div class="flex flex-col items-center space-y-8">
-        <div class="p-4 text-center">
-          <p class="text-xl md:text-2xl font-bold text-green-400 drop-shadow-lg">
-            Découvrez notre Mini-app📲 avec de bonnes interactions en haut à droite 👆
-          </p>
-        </div>
-        <img src="chaton.jpg" alt="Logo Dry.Coffee76" class="h-48 w-48 md:h-64 md:w-64 object-cover rounded-full">
-      </div>
-    </section>
-
-    <!-- Section des produits (cachée par défaut) -->
-    <section id="products" class="hidden grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Section des produits (visible par défaut) -->
+    <section id="products" class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <!-- Produit 1: Moon Velvet -->
       <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
         <h2 class="text-xl font-semibold mt-4">🌳 Moon Velvet 🌳</h2>
@@ -234,19 +221,8 @@
       menu.classList.toggle('open');
     }
 
-    // Afficher la section d'accueil et cacher les autres
-    function showAccueil() {
-      document.getElementById('accueil').classList.remove('hidden');
-      document.getElementById('products').classList.add('hidden');
-      document.getElementById('description-olivette').classList.add('hidden');
-      document.getElementById('description-olivette_frozen').classList.add('hidden');
-      document.getElementById('description-colombienne').classList.add('hidden');
-      document.getElementById('information').classList.add('hidden');
-    }
-
     // Afficher la section des produits et cacher les autres
     function showProducts() {
-      document.getElementById('accueil').classList.add('hidden');
       document.getElementById('products').classList.remove('hidden');
       document.getElementById('description-olivette').classList.add('hidden');
       document.getElementById('description-olivette_frozen').classList.add('hidden');
@@ -256,7 +232,6 @@
 
     // Afficher la description d'un produit et cacher les autres sections
     function showDescription(product) {
-      document.getElementById('accueil').classList.add('hidden');
       document.getElementById('products').classList.add('hidden');
       document.getElementById('information').classList.add('hidden');
       document.getElementById(`description-${product}`).classList.remove('hidden');
@@ -264,7 +239,6 @@
 
     // Afficher la section d'information et cacher les autres
     function showInformation() {
-      document.getElementById('accueil').classList.add('hidden');
       document.getElementById('products').classList.add('hidden');
       document.getElementById('description-olivette').classList.add('hidden');
       document.getElementById('description-olivette_frozen').classList.add('hidden');
@@ -272,9 +246,9 @@
       document.getElementById('information').classList.remove('hidden');
     }
 
-    // Afficher la section d'accueil par défaut
+    // Afficher la section des produits par défaut
     window.onload = function() {
-      showAccueil();
+      showProducts();
     };
   </script>
 </body>
