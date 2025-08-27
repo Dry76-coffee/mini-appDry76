@@ -14,6 +14,11 @@
     .animate-spin {
       animation: spin 2s linear infinite;
     }
+    /* Animation pour la barre de progression */
+    @keyframes fill {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
     /* Écran de chargement plein écran */
     #loading-screen {
       position: fixed;
@@ -21,7 +26,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(17, 24, 39, 0.95);
+      background: #000; /* Fond noir */
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -32,6 +37,21 @@
     #loading-screen.hidden {
       opacity: 0;
       visibility: hidden;
+    }
+    /* Barre de progression */
+    .progress-bar {
+      width: 200px;
+      height: 8px;
+      background: #333;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 1rem;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: #22c55e; /* Vert Tailwind (green-500) */
+      width: 0;
+      animation: fill 3s linear forwards; /* Animation sur 3 secondes */
     }
     /* Style du bouton hamburger */
     .hamburger {
@@ -82,6 +102,9 @@
   <div id="loading-screen">
     <img src="chaton.jpg" alt="Loading Logo" class="h-24 w-24 animate-spin">
     <p class="text-white text-lg mt-4">Chargement...</p>
+    <div class="progress-bar">
+      <div class="progress-bar-fill"></div>
+    </div>
   </div>
 
   <header class="bg-gray-800 p-4">
