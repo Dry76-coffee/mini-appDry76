@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liens - Dry.Coffee76</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Animation de rotation pour l'écran de chargement */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .animate-spin {
+      animation: spin 2s linear infinite;
+    }
+    /* Écran de chargement plein écran */
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(17, 24, 39, 0.95);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    #loading-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    /* Style du bouton hamburger */
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 24px;
+      height: 20px;
+      cursor: pointer;
+    }
+    .hamburger span {
+      width: 100%;
+      height: 3px;
+      background-color: white;
+      transition: all 0.3s ease;
+    }
+    /* Bouton de fermeture du menu */
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      color: white;
+      cursor: pointer;
+    }
+    /* Styles du menu */
+    #nav-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 16rem;
+      background: #1f2937;
+      padding: 1.5rem;
+      z-index: 1000;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      display: none;
+    }
+    #nav-menu.open {
+      transform: translateX(0);
+      display: block;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+  <!-- Écran de chargement -->
+  <div id="loading-screen">
+    <img src="chaton.jpg" alt="Loading Logo" class="h-24 w-24 animate-spin">
+    <p class="text-white text-lg mt-4">Chargement...</p>
+  </div>
+
+  <header class="bg-gray-800 p-4">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center">
+        <img src="chaton.jpg" alt="Logo Chaton" class="h-12 w-12 mr-2">
+        <h1 class="text-3xl font-bold">Dry.Coffee76</h1>
+      </div>
+      <!-- Bouton hamburger -->
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <!-- Menu de navigation -->
+    <nav id="nav-menu">
+      <span class="close-btn" onclick="toggleMenu()">✖</span>
+      <ul class="flex flex-col space-y-4 mt-16">
+        <li><a href="index.html" class="text-lg hover:text-green-400">Menu📝</a></li>
+        <li><a href="index.html#information" class="text-lg hover:text-green-400">Informationℹ️</a></li>
+        <li><a href="links.html" onclick="toggleMenu()" class="text-lg hover:text-green-400">Liens🔗</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container mx-auto p-6">
+    <section class="bg-gray-800 rounded-lg p-4 shadow-lg text-center">
+      <h2 class="text-xl font-semibold mt-4">Nos Liens</h2>
+      <p class="text-gray-400 mt-2">Rejoignez-nous sur nos plateformes pour rester connecté et découvrir nos dernières nouveautés !</p>
+      <div class="mt-6 flex flex-col space-y-4">
+        <a href="https://ptdym198.org/joinchat/vlNUyjhhgWD8SfEaRTwUCQ" class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md text-center inline-block">Canal Potato🥔</a>
+        <a href="https://t.me/+ayptPdxw1WEzNDVk" class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md text-center inline-block">Canal Telegram🟦</a>
+        <a href="https://signal.me/#eu/gHsUO0hCWSrM3TLgrhorIhP_M40Qf0yJz6eht09COk5trLXpo8JOHpUqmGNYIGKX" class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md text-center inline-block">Contact Signal🔹</a>
+      </div>
+      <a href="index.html" class="mt-4 w-full bg-gray-600 hover:bg-gray-700 text-white py-2 rounded-md text-center inline-block">Retour</a>
+    </section>
+  </main>
+
+  <footer class="bg-gray-800 p-4 text-center">
+    <p>&copy; 2025 Dry.Coffee76. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    // Cacher l'écran de chargement après 3 secondes
+    setTimeout(() => {
+      const loadingScreen = document.getElementById('loading-screen');
+      loadingScreen.classList.add('hidden');
+    }, 3000);
+
+    // Basculer le menu de navigation
+    function toggleMenu() {
+      const menu = document.getElementById('nav-menu');
+      console.log('Clic sur le menu hamburger ou bouton de fermeture'); // Débogage
+      menu.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
