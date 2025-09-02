@@ -133,7 +133,7 @@
 
   <main class="container mx-auto p-6">
     <!-- Section des produits (visible par défaut) -->
-    <section id="products" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <section id="products" class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <!-- Produit 1: Moon Velvet -->
       <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
         <h2 class="text-xl font-semibold mt-4">🌳 Moon Velvet 🌳</h2>
@@ -148,6 +148,11 @@
       <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
         <h2 class="text-xl font-semibold mt-4">❄️ Colombienne 0,95% 🇨🇴</h2>
         <img src="baida95.jpg" alt="Colombienne" class="w-full h-48 object-cover rounded-md cursor-pointer" onclick="showDescription('colombienne')">
+      </div>
+      <!-- Produit 4: JAUNE SUPERMOUSS KGF -->
+      <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
+        <h2 class="text-xl font-semibold mt-4">🦊 JAUNE SUPERMOUSS KGF 🧽</h2>
+        <img src="jaune_supermouss.jpg" alt="JAUNE SUPERMOUSS KGF" class="w-full h-48 object-cover rounded-md cursor-pointer" onclick="showDescription('jaune_supermouss')">
       </div>
     </section>
 
@@ -209,6 +214,23 @@
       <button onclick="showProducts()" class="mt-4 w-full bg-gray-600 hover:bg-gray-700 text-white py-2 rounded-md">Retour</button>
     </section>
 
+    <!-- Section de description pour JAUNE SUPERMOUSS KGF (cachée par défaut) -->
+    <section id="description-jaune_supermouss" class="hidden bg-gray-800 rounded-lg p-4 shadow-lg">
+      <h2 class="text-xl font-semibold mt-4">🦊 JAUNE SUPERMOUSS KGF 🧽</h2>
+      <video class="w-full h-48 object-cover rounded-md" src="jaune_supermouss.mp4" poster="jaune_supermouss.jpg" alt="JAUNE SUPERMOUSS KGF" controls></video>
+      <p class="text-gray-400 mt-2">
+        🧬 CRITICAL LEMON 🍋<br>
+        <br>
+        Prix 🏷️<br>
+        👉 10G = 60€<br>
+        👉 25G = 120€<br>
+        👉 50G = 200€<br>
+        👉 100G = 370€<br>
+      </p>
+      <a href="https://signal.me/#eu/gHsUO0hCWSrM3TLgrhorIhP_M40Qf0yJz6eht09COk5trLXpo8JOHpUqmGNYIGKX" class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md text-center inline-block">Contact</a>
+      <button onclick="showProducts()" class="mt-4 w-full bg-gray-600 hover:bg-gray-700 text-white py-2 rounded-md">Retour</button>
+    </section>
+
     <!-- Section d'information (cachée par défaut) -->
     <section id="information" class="hidden bg-gray-800 rounded-lg p-4 shadow-lg text-center">
       <h2 class="text-xl font-semibold mt-4">À propos de Dry.Coffee76</h2>
@@ -250,6 +272,7 @@
       document.getElementById('description-olivette').classList.add('hidden');
       document.getElementById('description-olivette_frozen').classList.add('hidden');
       document.getElementById('description-colombienne').classList.add('hidden');
+      document.getElementById('description-jaune_supermouss').classList.add('hidden');
       document.getElementById('information').classList.add('hidden');
     }
 
@@ -257,6 +280,10 @@
     function showDescription(product) {
       document.getElementById('products').classList.add('hidden');
       document.getElementById('information').classList.add('hidden');
+      document.getElementById('description-olivette').classList.add('hidden');
+      document.getElementById('description-olivette_frozen').classList.add('hidden');
+      document.getElementById('description-colombienne').classList.add('hidden');
+      document.getElementById('description-jaune_supermouss').classList.add('hidden');
       document.getElementById(`description-${product}`).classList.remove('hidden');
     }
 
@@ -266,6 +293,7 @@
       document.getElementById('description-olivette').classList.add('hidden');
       document.getElementById('description-olivette_frozen').classList.add('hidden');
       document.getElementById('description-colombienne').classList.add('hidden');
+      document.getElementById('description-jaune_supermouss').classList.add('hidden');
       document.getElementById('information').classList.remove('hidden');
     }
 
