@@ -134,44 +134,26 @@
   <main class="container mx-auto p-6">
     <!-- Section des produits (visible par défaut) -->
     <section id="products" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <!-- Produit 1: Moon Velvet -->
-      <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
-        <h2 class="text-xl font-semibold mt-4">🌳 Moon Velvet 🌳</h2>
-        <img src="moon.JPG" alt="Moon Velvet" class="w-full h-48 object-cover rounded-md cursor-pointer" onclick="showDescription('olivette')">
-      </div>
-      <!-- Produit 2: Olivette Frozen -->
+      <!-- Produit 1: Olivette Frozen -->
       <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
         <h2 class="text-xl font-semibold mt-4">🫒Olivette Frozen🧊90U⚡️</h2>
         <img src="olivette_frozen.JPG" alt="Olivette Frozen" class="w-full h-48 object-cover rounded-md cursor-pointer" onclick="showDescription('olivette_frozen')">
       </div>
-      <!-- Produit 3: Colombienne -->
+      <!-- Produit 2: Colombienne -->
       <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
         <h2 class="text-xl font-semibold mt-4">❄️ Colombienne 0,95% 🇨🇴</h2>
         <img src="baida95.jpg" alt="Colombienne" class="w-full h-48 object-cover rounded-md cursor-pointer" onclick="showDescription('colombienne')">
       </div>
-      <!-- Produit 4: JAUNE SUPERMOUSS KGF -->
+      <!-- Produit 3: JAUNE SUPERMOUSS KGF -->
       <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
         <h2 class="text-xl font-semibold mt-4">🦊 JAUNE SUPERMOUSS KGF 🧽</h2>
         <img src="jaune_supermouss.JPG" alt="JAUNE SUPERMOUSS KGF" class="w-full h-48 object-cover rounded-md cursor-pointer" onclick="showDescription('jaune_supermouss')">
       </div>
-    </section>
-
-    <!-- Section de description pour Moon Velvet (cachée par défaut) -->
-    <section id="description-olivette" class="hidden bg-gray-800 rounded-lg p-4 shadow-lg">
-      <h2 class="text-xl font-semibold mt-4">🌳 Moon Velvet 🌳</h2>
-      <video class="w-full h-48 object-cover rounded-md" src="Moonvelvet.MOV" poster="moon.JPG" alt="Moon Velvet" controls></video>
-      <p class="text-gray-400 mt-2">
-        🏆Top Shelf🏆<br>
-        <br>
-        🌳5G=50€<br>
-        🌳10G=80€<br>
-        🌳25G=190€<br>
-        <br>
-        👎Pas beaucoup de stock🛍️, <br>
-        dépêcher vous les frérots 😉
-      </p>
-      <a href="https://signal.me/#eu/gHsUO0hCWSrM3TLgrhorIhP_M40Qf0yJz6eht09COk5trLXpo8JOHpUqmGNYIGKX" class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md text-center inline-block">Contact</a>
-      <button onclick="showProducts()" class="mt-4 w-full bg-gray-600 hover:bg-gray-700 text-white py-2 rounded-md">Retour</button>
+      <!-- Produit 4: Tropicana -->
+      <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
+        <h2 class="text-xl font-semibold mt-4">🍹 Tropicana 🍹</h2>
+        <img src="tropicana.jpg" alt="Tropicana" class="w-full h-48 object-cover rounded-md cursor-pointer" onclick="showDescription('tropicana')">
+      </div>
     </section>
 
     <!-- Section de description pour Olivette Frozen (cachée par défaut) -->
@@ -231,6 +213,25 @@
       <button onclick="showProducts()" class="mt-4 w-full bg-gray-600 hover:bg-gray-700 text-white py-2 rounded-md">Retour</button>
     </section>
 
+    <!-- Section de description pour Tropicana (cachée par défaut) -->
+    <section id="description-tropicana" class="hidden bg-gray-800 rounded-lg p-4 shadow-lg">
+      <h2 class="text-xl font-semibold mt-4">🍹 Tropicana 🍹</h2>
+      <video class="w-full h-48 object-cover rounded-md" src="tropicana.mp4" poster="tropicana.jpg" alt="Tropicana" controls></video>
+      <p class="text-gray-400 mt-2">
+        La Casa du Canna FARM🇲🇦<br>
+        <br>
+        🍹5G=60€<br>
+        🍹10G=100€<br>
+        🍹25G=200€<br>
+        🍹50G=370€<br>
+        🍹100G=720€<br>
+        <br>
+        🍊🍋Un bon goût d’orange et agrume sucré dans la bouche avec une défonce agréable 🤩
+      </p>
+      <a href="https://signal.me/#eu/gHsUO0hCWSrM3TLgrhorIhP_M40Qf0yJz6eht09COk5trLXpo8JOHpUqmGNYIGKX" class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md text-center inline-block">Contact</a>
+      <button onclick="showProducts()" class="mt-4 w-full bg-gray-600 hover:bg-gray-700 text-white py-2 rounded-md">Retour</button>
+    </section>
+
     <!-- Section d'information (cachée par défaut) -->
     <section id="information" class="hidden bg-gray-800 rounded-lg p-4 shadow-lg text-center">
       <h2 class="text-xl font-semibold mt-4">À propos de Dry.Coffee76</h2>
@@ -269,10 +270,10 @@
     // Afficher la section des produits et cacher les autres
     function showProducts() {
       document.getElementById('products').classList.remove('hidden');
-      document.getElementById('description-olivette').classList.add('hidden');
       document.getElementById('description-olivette_frozen').classList.add('hidden');
       document.getElementById('description-colombienne').classList.add('hidden');
       document.getElementById('description-jaune_supermouss').classList.add('hidden');
+      document.getElementById('description-tropicana').classList.add('hidden');
       document.getElementById('information').classList.add('hidden');
     }
 
@@ -280,20 +281,20 @@
     function showDescription(product) {
       document.getElementById('products').classList.add('hidden');
       document.getElementById('information').classList.add('hidden');
-      document.getElementById('description-olivette').classList.add('hidden');
       document.getElementById('description-olivette_frozen').classList.add('hidden');
       document.getElementById('description-colombienne').classList.add('hidden');
       document.getElementById('description-jaune_supermouss').classList.add('hidden');
+      document.getElementById('description-tropicana').classList.add('hidden');
       document.getElementById(`description-${product}`).classList.remove('hidden');
     }
 
     // Afficher la section d'information et cacher les autres
     function showInformation() {
       document.getElementById('products').classList.add('hidden');
-      document.getElementById('description-olivette').classList.add('hidden');
       document.getElementById('description-olivette_frozen').classList.add('hidden');
       document.getElementById('description-colombienne').classList.add('hidden');
       document.getElementById('description-jaune_supermouss').classList.add('hidden');
+      document.getElementById('description-tropicana').classList.add('hidden');
       document.getElementById('information').classList.remove('hidden');
     }
 
