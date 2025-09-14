@@ -95,6 +95,15 @@
       transform: translateX(0);
       display: block;
     }
+    /* Style pour les émojis en haut à gauche des images */
+    .emoji-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 0.5rem;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
   </style>
 </head>
 <body class="bg-gray-900 text-white min-h-screen">
@@ -135,30 +144,34 @@
     <!-- Section des produits (visible par défaut) -->
     <section id="products" class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <!-- Produit 1: Olivette Frozen -->
-      <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
-        <h2 class="text-xl font-semibold mt-4">🫒Olivette Frozen🧊90U⚡️</h2>
+      <div class="bg-gray-800 rounded-lg p-4 shadow-lg relative">
+        <h2 class="text-xl font-semibold mt-4">Olivette Frozen90U⚡️</h2>
+        <span class="emoji-overlay">🫒🧊</span>
         <img src="olivette_frozen.JPG" alt="Olivette Frozen" class="w-full h-48 object-cover rounded-md cursor-pointer" onclick="showDescription('olivette_frozen')">
       </div>
       <!-- Produit 2: Colombienne -->
-      <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
-        <h2 class="text-xl font-semibold mt-4">❄️ Colombienne 0,95% 🇨🇴</h2>
+      <div class="bg-gray-800 rounded-lg p-4 shadow-lg relative">
+        <h2 class="text-xl font-semibold mt-4"> Colombienne 0,95% </h2>
+        <span class="emoji-overlay">❄️🇨🇴</span>
         <img src="baida95.jpg" alt="Colombienne" class="w-full h-48 object-cover rounded-md cursor-pointer" onclick="showDescription('colombienne')">
       </div>
       <!-- Produit 3: JAUNE SUPERMOUSS KGF -->
-      <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
-        <h2 class="text-xl font-semibold mt-4">🦊 JAUNE SUPERMOUSS KGF 🧽</h2>
+      <div class="bg-gray-800 rounded-lg p-4 shadow-lg relative">
+        <h2 class="text-xl font-semibold mt-4"> JAUNE SUPERMOUSS KGF </h2>
+        <span class="emoji-overlay">🧽🦊</span>
         <img src="jaune_supermouss.JPG" alt="JAUNE SUPERMOUSS KGF" class="w-full h-48 object-cover rounded-md cursor-pointer" onclick="showDescription('jaune_supermouss')">
       </div>
       <!-- Produit 4: Tropicana -->
-      <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
-        <h2 class="text-xl font-semibold mt-4">🍹 Tropicana 🍹</h2>
+      <div class="bg-gray-800 rounded-lg p-4 shadow-lg relative">
+        <h2 class="text-xl font-semibold mt-4"> Tropicana </h2>
+        <span class="emoji-overlay">🍹🇲🇦</span>
         <img src="tropicana.JPG" alt="Tropicana" class="w-full h-48 object-cover rounded-md cursor-pointer" onclick="showDescription('tropicana')">
       </div>
     </section>
 
     <!-- Section de description pour Olivette Frozen (cachée par défaut) -->
     <section id="description-olivette_frozen" class="hidden bg-gray-800 rounded-lg p-4 shadow-lg">
-      <h2 class="text-xl font-semibold mt-4">🫒Olivette Frozen🧊90U⚡️</h2>
+      <h2 class="text-xl font-semibold mt-4">Olivette Frozen90U⚡️</h2>
       <video class="w-full h-48 object-cover rounded-md" src="olivette_frozen.mp4" poster="olivette_frozen.JPG" alt="Olivette Frozen" controls></video>
       <p class="text-gray-400 mt-2">
         📫Farm : Treasure valey<br>
@@ -179,7 +192,7 @@
 
     <!-- Section de description pour Colombienne (cachée par défaut) -->
     <section id="description-colombienne" class="hidden bg-gray-800 rounded-lg p-4 shadow-lg">
-      <h2 class="text-xl font-semibold mt-4">❄️ Colombienne 0,95% 🇨🇴</h2>
+      <h2 class="text-xl font-semibold mt-4"> Colombienne 0,95% </h2>
       <video class="w-full h-48 object-cover rounded-md" src="baida95.mp4" poster="baida95.jpg" alt="Colombienne" controls></video>
       <p class="text-gray-400 mt-2">
         Qualité: ⭐️⭐️⭐️⭐️⭐️<br>
@@ -198,7 +211,7 @@
 
     <!-- Section de description pour JAUNE SUPERMOUSS KGF (cachée par défaut) -->
     <section id="description-jaune_supermouss" class="hidden bg-gray-800 rounded-lg p-4 shadow-lg">
-      <h2 class="text-xl font-semibold mt-4">🦊 JAUNE SUPERMOUSS KGF 🧽</h2>
+      <h2 class="text-xl font-semibold mt-4"> JAUNE SUPERMOUSS KGF </h2>
       <video class="w-full h-48 object-cover rounded-md" src="jaune_supermouss.mp4" poster="jaune_supermouss.JPG" alt="JAUNE SUPERMOUSS KGF" controls></video>
       <p class="text-gray-400 mt-2">
         🧬 CRITICAL LEMON 🍋<br>
@@ -215,7 +228,7 @@
 
     <!-- Section de description pour Tropicana (cachée par défaut) -->
     <section id="description-tropicana" class="hidden bg-gray-800 rounded-lg p-4 shadow-lg">
-      <h2 class="text-xl font-semibold mt-4">🍹 Tropicana 🍹</h2>
+      <h2 class="text-xl font-semibold mt-4"> Tropicana </h2>
       <video class="w-full h-48 object-cover rounded-md" src="tropicana.mp4" poster="tropicana.JPG" alt="Tropicana" controls></video>
       <p class="text-gray-400 mt-2">
         La Casa du Canna FARM🇲🇦<br>
